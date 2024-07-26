@@ -18,7 +18,7 @@ fun main() {
         // 다솜이의 득표수를 1 증가
         votesForDasom++
 
-        // 다솜이를 제외한 최다 득표자의 득표수 1 감소
+        // 최다 득표자의 득표수 1 감소
         votes.offer(votes.poll() - 1)
 
         // 매수 횟수 1 증가
