@@ -7,7 +7,7 @@ fun main() {
     // songs에 알고 있는 음악의 제목과 계이름을 대입
     repeat(numOfSong) {
         readln().split(' ').let {
-            songs[it[1]] = it.subList(2, it.lastIndex + 1)
+            songs[it[1]] = it.subList(2, 5) // 계이름의 첫 3개만 가져온다.
         }
     }
 
@@ -15,7 +15,7 @@ fun main() {
     repeat(numOfQuiz) {
         readln().split(' ').let { quiz ->
             // 첫 세 음이 동일한 노래의 개수로 출력값을 구분
-            songs.filterValues { value -> value.subList(0, 3) == quiz }.let {
+            songs.filterValues { value -> value == quiz }.let {
                 println(
                     if (it.size == 1) it.keys.first()
                     else if (it.size > 1) "?"
