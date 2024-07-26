@@ -12,11 +12,8 @@ fun main() {
     repeat(numOfCandidates - 1) { votes.offer(readln().toInt()) }
 
     while (true) {
-        // 다솜이보다 표가 작은 경우 PriorityQueue에서 제거
-        votes.removeIf { it < votesForDasom }
-
-        // 다솜이가 나머지 후보자들보다 표가 많은 경우 반복문을 종료
-        if (votes.isEmpty()) break
+        // 다솜이를 제외한 다른 후보자가 없거나, 다솜이가 나머지 후보자들보다 표가 많은 경우 반복문을 종료
+        if (votes.isEmpty() || votesForDasom > votes.peek()) break
 
         // 다솜이의 득표수를 1 증가
         votesForDasom++
