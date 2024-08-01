@@ -10,10 +10,10 @@ const val FAILURE = "Hing"
 
 fun bfs(): Boolean {
     val deque = ArrayDeque<Pair<Int, Int>>() // 탐색해야 하는 좌표를 저장하는 자료구조
-    deque.add(Pair(0, 0)) // 시작 지점 = (0,0)
+    deque.add(Pair(0, 0)) // 시작 좌표 = (0,0)
 
     while (deque.isNotEmpty()) {
-        val (x, y) = deque.poll()
+        val (x, y) = deque.poll() // 기준 좌표
 
         // 출구에 도착한 경우, 출구의 방문 여부(=게임의 성공 여부)를 리턴
         if (numbers[x][y] == -1) return visited[x][y]
