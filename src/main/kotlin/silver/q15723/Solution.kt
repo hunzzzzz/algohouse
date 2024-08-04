@@ -5,7 +5,7 @@ import java.util.*
 // 노드와 링크를 표현한 그래프 (key: 출발 노드, value: 링크로 연결된 목표 노드들)
 var graph = hashMapOf<String, MutableList<String>>()
 
-fun dfs(from: String, to: String): Boolean {
+fun bfs(from: String, to: String): Boolean {
     val deque = ArrayDeque<String>() // 탐색해야 할 위치를 저장하는 자료구조
     deque.add(from) // 시작 노드를 deque에 추가
 
@@ -47,7 +47,7 @@ fun main() {
                 val to = it[1]
 
                 // bfs 탐색의 결과에 따른 결과값 출력
-                dfs(from = from, to = to).let { result ->
+                bfs(from = from, to = to).let { result ->
                     if (result) append("T\n") else append("F\n")
                 }
             }
